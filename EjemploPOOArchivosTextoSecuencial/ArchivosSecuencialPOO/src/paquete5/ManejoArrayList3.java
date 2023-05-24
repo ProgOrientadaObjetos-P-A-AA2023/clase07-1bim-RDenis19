@@ -35,6 +35,15 @@ public class ManejoArrayList3 {
         calificaciones.add(c2);
         calificaciones.add(c3);
         
+        
+        double suma = 0;
+        double promedio;
+        
+        for (int i = 0; i < calificaciones.size(); i++) {
+            suma += calificaciones.get(i).obtenerNota();
+        }   
+
+        promedio = suma/calificaciones.size();
         for (int i = 0; i < calificaciones.size(); i++) {
             System.out.printf("%s - %s - %.2f\n", 
                     calificaciones.get(i).obtenerProfesor().obtenerNombre(), 
@@ -42,6 +51,6 @@ public class ManejoArrayList3 {
                     calificaciones.get(i).obtenerNota());
         }
         
-        
+        System.out.printf("\n\nEl promedio de las calificacion es: %.1f\n", promedio);
     }
 }
